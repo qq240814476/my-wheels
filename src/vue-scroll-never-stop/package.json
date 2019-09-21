@@ -1,0 +1,15 @@
+{
+  "name": "my-infinite-scroll",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {
+    "vue": "2.6.10"
+  },
+  "devDependencies": {
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.40.2"
+  }
+}
