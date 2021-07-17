@@ -9,10 +9,10 @@ export default {
     observer: null,
   }),
   mounted() {
-    const options = this.options || {};
+    const options = this.options || { root:this.$parent.$refs['observe-root'] };
     this.observer = new IntersectionObserver(([entry]) => {
       if (entry && entry.isIntersecting) {
-        this.$emit("intersect");
+        this.$emit("intersect", this.observer);
       }
     }, options);
 

@@ -1,9 +1,9 @@
 <template>
   <div>
-    <ul>
-      <li class="list-item" v-for="item in items" :key="item.id">{{item.name}}</li>
-    </ul>
-    <Observer @intersect="intersected"/>
+    <div class="container" ref="observe-root">
+      <section class="list-item" v-for="item in items" :key="item.id">{{item.name}}</section>
+    </div>
+    <Observer @intersect="intersected" :options="options"/>
   </div>
 </template>
 
@@ -11,12 +11,12 @@
 import Observer from "./b";
 
 export default {
-  data: () => ({ page: 1, items: [] }),
+  data: () => ({ page: 1, items: [], options: null }),
   methods: {
     async intersected() {
       const res = await fetch(`https://jsonplaceholder.typicode.com/comments?_page=${
         this.page
-      }&_limit=50`);
+      }&_limit=20`);
 
       this.page++;
       const items = await res.json();
@@ -28,3 +28,17 @@ export default {
   },
 };
 </script>
+
+<style lang="less">
+.container{
+  height: 400px;
+  width: 300px;
+  overflow: auto;
+   .list-item{
+    height: 40px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    background: #777777;
+  }
+}
+</style>

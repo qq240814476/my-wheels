@@ -7,6 +7,7 @@ module.exports = {
     filename: 'app.js',
     path: path.resolve('./')
   },
+  devtool: 'cheap-eval-module-map',
   resolve:{
     extensions:['.vue', '.js']
   },
@@ -15,6 +16,14 @@ module.exports = {
       {
         test: /\.vue$/,
         use: 'vue-loader'
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader'
+        ]
       },
     ]
   },
