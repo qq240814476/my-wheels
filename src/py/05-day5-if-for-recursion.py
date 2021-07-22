@@ -1,24 +1,24 @@
 # Ex.1 fib
 
-# fib = [1, 1]
-# for i in range(2, 20):
-#   fib.append(fib[i - 1] + fib[i - 2])
-# print(fib)
+fib = [1, 1]
+for i in range(2, 20):
+  fib.append(fib[i - 1] + fib[i - 2])
+print(fib)
 
 # Ex.2 perfect num
 
-# res = []
-# for i in range(3, 10001):
-#   sum = 0
-#   for j in range(1, i):
-#     if i % j == 0:
-#       sum += j
-#       if sum > i:
-#         break
-#   # print(sum)
-#   if sum == i:
-#     res.append(i)
-# print(res)
+res = []
+for i in range(3, 10001):
+  sum = 0
+  for j in range(1, i):
+    if i % j == 0:
+      sum += j
+      if sum > i:
+        break
+  # print(sum)
+  if sum == i:
+    res.append(i)
+print(res)
 
 
 # Ex.3 find prime , linear sieve
